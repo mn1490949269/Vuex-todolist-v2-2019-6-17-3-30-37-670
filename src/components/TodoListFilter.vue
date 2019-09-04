@@ -18,8 +18,8 @@
         },
         methods: {
             handleFilter: function (currentFilter) {
-                this.$store.dispatch("updatetodos",currentFilter)
-                //this.$store.commit("updateCurrentFilter",currentFilter)
+                //this.$store.dispatch("updatetodos",currentFilter)
+                this.$store.commit("updateCurrentFilter",currentFilter)
             }
         }
     }

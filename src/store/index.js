@@ -62,15 +62,14 @@ export default {
             });
             context.dispatch('fetchtodos',context)  
         },
-        updatetodos:function(context,currentFilter){
+        updateStatus:function(context,index){
             const url="http://5b4dcb2aec112500143a2311.mockapi.io/api/todos";
-            axios.put(url,{
-                status:currentFilter
+            axios.put(url),then(function(response){
+                context.commit("toggleActive",index)
             }).catch(function(error){
-                alert(error.response)
-            });
-            context.dispatch('updatetodos',context)  
-        }
+                console.log(error.response);
+            })
+        },   
 
     }
 }
